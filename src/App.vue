@@ -1,28 +1,45 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <Banner />
+    <Navbar />
+    <Products v-bind:products="products" />
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Banner from './components/Banner';
+import Products from './screens/Products';
+import Navbar from './components/Navbar';
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
-  }
-}
+    Products,
+    Banner,
+    Navbar,
+  },
+  data() {
+    return {
+      products: [
+        {
+          id: 1,
+          name: 'boardwalk',
+          color: 'red',
+        },
+        {
+          id: 2,
+          name: 'BROADWAY 100MM',
+          color: 'red',
+        },
+        {
+          id: 3,
+          name: 'BROADWAY PLANKS 100MM',
+          color: 'red',
+        },
+      ],
+    };
+  },
+};
 </script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
+<style></style>
